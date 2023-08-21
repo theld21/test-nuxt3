@@ -1,0 +1,6 @@
+1 0 * * * chown -R www-data:www-data /app/storage
+* * * * * cd /app && php artisan schedule:run >> /dev/null 2>&1
+0 0 */10 * * find /app/storage/app/tmp/* -type d -mtime +10 -exec rm -r {} \;
+0 0 */10 * * find /app/storage/app/downloads/* -type f -mtime +10 -exec rm {} \;
+0 0 */10 * * find /app/storage/app/applications/documents/* -type f -mtime +10 -exec rm {} \;
+0 0 */10 * * find /app/storage/app/pre-upload/* -type d -mtime +10 -exec rm -r {} \;
