@@ -4,29 +4,8 @@ WORKDIR /
 RUN apk update && apk add \
   git \
   wget \
-  freetype \
-  freetype-dev \
-  libpng-dev \
-  jpeg-dev \
-  libzip-dev \
-  zip \
-  unzip \
   openssh \
-  autoconf \
-  supervisor \
-  libreoffice \
-  ghostscript
-
-# RUN  docker-php-ext-configure gd \
-#         --with-freetype-dir=/usr/bin/ \
-#         --with-png-dir=/usr/bin/ \
-#         --with-jpeg-dir=/usr/lib/ \
-#         --with-gd
-
-# RUN docker-php-ext-install gd opcache pdo_mysql && \
-#   docker-php-ext-configure zip --with-libzip && \
-#   docker-php-ext-install zip  && \
-#   docker-php-ext-install sockets
+  supervisor
 
 ENV PHPREDIS_VERSION 5.3.7
 

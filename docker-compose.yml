@@ -68,7 +68,7 @@ services:
     environment:
       HOST: 0.0.0.0
     volumes:
-      - ${PWD}/client/.:/app
+      - ${PWD}/client/.:/frontend
     networks:
       - test-network
 
