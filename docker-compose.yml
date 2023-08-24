@@ -40,7 +40,7 @@ services:
     volumes:
       - mysql-vol:/var/lib/mysql
     ports:
-      - ${PRIVATE_HOST}:${MYSQL_HOST_PORT}:${DB_PORT}
+      - ${PRIVATE_HOST}:${MYSQL_HOST_PORT}:3306
     networks:
       - test-network
 
@@ -50,7 +50,7 @@ services:
     volumes:
       - redis-vol:/data
     ports:
-      - ${PRIVATE_HOST}:${REDIS_HOST_PORT}:${REDIS_PORT}
+      - ${PRIVATE_HOST}:${REDIS_HOST_PORT}:6379
     networks:
       - test-network
 

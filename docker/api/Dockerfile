@@ -3,11 +3,14 @@ WORKDIR /
 
 RUN apk update && apk add \
   git \
+  curl \
   wget \
   openssh \
   supervisor
 
 ENV PHPREDIS_VERSION 5.3.7
+
+RUN docker-php-ext-install pdo_mysql
 
 RUN mkdir -p /usr/src/php/ext/redis \
     && curl -L https://github.com/phpredis/phpredis/archive/$PHPREDIS_VERSION.tar.gz | tar xvz -C /usr/src/php/ext/redis --strip 1 \

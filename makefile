@@ -10,3 +10,7 @@ update:
 queue:
 	@docker-compose exec api php artisan queue:restart
 	@docker-compose exec api php artisan queue:work
+
+ldt:
+	@docker-compose exec api php artisan queue:restart
+	@docker-compose exec api php artisan auth:remind-verify
