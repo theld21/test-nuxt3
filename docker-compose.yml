@@ -65,6 +65,7 @@ services:
         ENVIRONMENT: ${ENVIRONMENT:-DEV}
     ports:
       - ${PRIVATE_HOST}:${CLIENT_HOST_PORT}:3000
+      - ${PRIVATE_HOST}:${VITE_PORT}:24678
     environment:
       HOST: 0.0.0.0
     volumes:
